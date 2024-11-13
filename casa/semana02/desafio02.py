@@ -18,6 +18,47 @@
 # fornecido pelo usuário.
 # Exemplo de saída:
 # Digite um número: 30
-# A sequencia de fibonaci para o número 30 é: 0, 1, 2, 3, 5, 8, 13, 21
+# A sequencia de fibonaci para o número 30 é: 0, 1, 1, 2, 3, 5, 8, 13, 21
+
+# # qtd = int(input('Digite a quantidade de itens da lista: '))
+# qtd = 10
+# lista = []
+# num_atual = 0
+# num_anterior = 0
+# for item in range(qtd):
+#     if num_atual == 0:
+#         lista.append(num_atual)
+#         num_atual = 1
+#     else:
+#         lista.append(num_atual)
+#         print(num_atual, num_anterior)
+#         num_proximo = num_atual + num_anterior
+#         print(num_proximo)
+#         num_atual = num_proximo
+#         num_anterior = num_atual
+#         # print(num_anterior, num_atual, num_proximo)
+# print(lista)
 
 
+# Quantidade de itens da sequência de Fibonacci
+qtd = 10
+lista = []
+
+# Valores iniciais para Fibonacci
+num_atual = 0
+num_anterior = 0
+
+for item in range(qtd):
+    if item == 0:
+        lista.append(0)  # Primeiro número da sequência é sempre 0
+    elif item == 1:
+        lista.append(1)  # Segundo número da sequência é sempre 1
+        num_anterior = 0
+        num_atual = 1
+    else:
+        num_proximo = num_atual + num_anterior
+        lista.append(num_proximo)
+        num_anterior = num_atual
+        num_atual = num_proximo
+
+print(f"A sequência de Fibonacci com {qtd} números é: {lista}")
