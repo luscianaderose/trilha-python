@@ -60,11 +60,21 @@ elif saque > 600:
 else:
     print('\nOperação válida.')
     notas_100 = saque // 100
-    notas_50 = (saque - (notas_100 * 100)) // 50
-    notas_10 = (saque - (notas_100 * 100) - (notas_50 * 50)) // 10
-    notas_5 = (saque - (notas_100 * 100) - (notas_50 * 50) - (notas_10 * 10)) // 5
-    notas_2 = (saque - (notas_100 * 100) - (notas_50 * 50) - (notas_10 * 10) - (notas_5 * 5)) // 2
-    notas_1 = (saque - (notas_100 * 100) - (notas_50 * 50) - (notas_10 * 10) - (notas_5 * 5) - (notas_2 * 2)) // 1
+    saque -= notas_100 * 100
+
+    notas_50 = saque  // 50
+    saque -= notas_50 * 50
+
+    notas_10 = saque // 10
+    saque -= notas_10 * 10
+
+    notas_5 = saque // 5
+    saque -= notas_5 * 5
+
+    notas_2 = saque // 2
+    saque -= notas_2 * 2
+    
+    notas_1 = saque // 1
 
     print(f'''\nExtrato do saque:
 - {notas_100} notas de 100
