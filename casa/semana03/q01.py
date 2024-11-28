@@ -43,25 +43,69 @@
 # Tarefas Pendentes:
 # 1 - Estudar para a prova
 # 2 - Comprar alimentos
+
 # Escolha uma opção: 2
 # Tarefas em Andamento:
+
 # 1 - Preparar apresentação
 # Escolha uma opção: 3
+
 # Tarefas Concluídas:
 # Nenhuma tarefa concluída
+
 # Escolha uma opção: 4
+
+from colorama import Fore, Style
+
+
+def linha():
+    return Fore.BLUE + '-' * 20 + Style.RESET_ALL
+
+def linha2():
+    return Fore.BLUE + '*' * 20 + Style.RESET_ALL
+
 
 pendentes = ['Estudar para a prova', 'Comprar alimentos']
 em_andamento = ['Preparar apresentação']
 concluidas = []
 
-opcao = input('''
-Lista de Tarefas
-Menu de Opções:
-1. Listar Tarefas Pendentes
-2. Listar Tarefas em Andamento
-3. Listar Tarefas Concluídas
-4. Sair
 
-Escolha uma opção: 
-''')
+while True:
+    opcao = input(f'''
+{linha()}
+{Fore.CYAN}LISTAS DE TAREFAS{Style.RESET_ALL}
+Menu de opções:
+{Fore.RED}1.{Style.RESET_ALL} Listar Tarefas Pendentes
+{Fore.YELLOW}2.{Style.RESET_ALL} Listar Tarefas em Andamento
+{Fore.BLUE}3.{Style.RESET_ALL} Listar Tarefas Concluídas
+{Fore.MAGENTA}4.{Style.RESET_ALL} Sair
+{linha()}
+
+Escolha uma opção: ''')
+
+    if opcao == '1':
+        print(f'{linha2()}{Fore.RED}\nTAREFAS PENDENTES:{Style.RESET_ALL}')
+        if pendentes:
+            for i, tarefa in enumerate(pendentes, start=1):
+                print(f'{i} - {tarefa}')
+        else:
+            print(f'{Fore.CYAN}Parabéns! Nenhuma tarefa pendente!{Style.RESET_ALL}')
+    elif opcao == '2':
+        print(f'{linha2()}\n{Fore.YELLOW}TAREFAS EM ANDAMENTO:{Style.RESET_ALL}')
+        if em_andamento:
+            for i, tarefa in enumerate(em_andamento, start=1):
+                print(f'{i} - {tarefa}')
+        else:
+            print(f'{Fore.CYAN}Nenhuma tarefa em andamento.{Style.RESET_ALL}')
+    elif opcao == '3':
+        print(f'{linha2()}\n{Fore.BLUE}TAREFAS CONCLUÍDAS:{Style.RESET_ALL}')
+        if concluidas:
+            for i, tarefa in enumerate(concluidas, start=1):
+                print(f'{i} - {tarefa}')
+        else:
+            print(f'{Fore.CYAN}Nenhuma tarefa concluída.{Style.RESET_ALL}')
+    elif opcao == '4':
+        print(f'{linha()}\n{Fore.CYAN}Até logo! Volte sempre!{Style.RESET_ALL}')
+        break
+    else:
+        print(f'{linha()}\n{Fore.CYAN}Opção inválida! Tente novamente.{Style.RESET_ALL}')
