@@ -202,7 +202,7 @@ Digite o número da lista de destino:
         print(f'{Fore.BLUE}Tarefa "{tarefa_nome}" movida para "Lista {lista}".{Style.RESET_ALL}')
 
     elif opcao == '5': # SAIR
-        print(f'{linha()}\n{Fore.CYAN}Até logo! Volte sempre!{Style.RESET_ALL}')
+        print(f'{linha()}\n{Fore.CYAN}Até logo! Cumpra suas tarefas!{Style.RESET_ALL}')
         break
 
     else:
