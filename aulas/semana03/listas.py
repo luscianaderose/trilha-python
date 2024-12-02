@@ -2,7 +2,7 @@ lista = ['a','b','c','d','e']
 
 print('OPERAÇÕES DE LEITURA DE UMA LISTA')
 print('1 lista: ', lista)
-print('2 primeira posição',lista[0])
+print('2 primeira posição', lista[0])
 print('3 Do primeiro ao terceiro:', lista[0:2])
 print('4 Último:', lista[-1])
 print('5 Penúltimo:', lista[-2])
