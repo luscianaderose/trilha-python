@@ -26,9 +26,11 @@
 # Tarefas Pendentes:
 # 1 - Estudar para a prova
 # 2 - Comprar alimentos
+
 # Escolha uma opção: 2
 # Tarefas em Andamento:
 # 1 - Preparar apresentação
+
 # Escolha uma opção: 3
 # Tarefas Concluídas:
 # Nenhuma tarefa concluída
@@ -100,6 +102,13 @@ pendentes = ['Estudar', 'Mercado']
 em_andamento = ['Apresentação']
 concluidas = []
 
+# lista = ''
+# if lista == 1:
+#     lista = 'Pendentes'
+# elif lista == 2:
+#     lista = 'Em andamento'
+# elif lista == 3:
+#     lista = 'Concluídas'
 
 while True:
     opcao = input(f'''
@@ -176,11 +185,21 @@ Digite o número da lista de destino:
             print(f'{Fore.RED}Lista de destino inválida!{Style.RESET_ALL}')
             continue
 
-        #Verificar se a tarefa existe na lista de origem
+        # Verificar se a tarefa existe na lista de origem
         if tarefa_nome in origem:
             origem.remove(tarefa_nome)
             destino.append(tarefa_nome)
-            print(f'{Fore.GREEN}Tarefa não encontrada na lista de origem!{Style.RESET_ALL}')
+        else:
+            print(f'{Fore.RED}Tarefa não encontrada na lista de origem!{Style.RESET_ALL}')
+
+        if destino == pendentes:
+            lista = 'Pendentes'
+        elif destino == em_andamento:
+            lista = 'Em andamento'
+        elif destino == concluidas:
+            lista = 'Concluídas'
+                
+        print(f'{Fore.BLUE}Tarefa "{tarefa_nome}" movida para "Lista {lista}".{Style.RESET_ALL}')
 
     elif opcao == '5': # SAIR
         print(f'{linha()}\n{Fore.CYAN}Até logo! Volte sempre!{Style.RESET_ALL}')
