@@ -52,5 +52,24 @@ produtos = {
     }
 }
 
-for item in produtos.items():
-    print(f'{item} - {item.value} R$ x (x unidades)')
+# 1 - Arroz: R$ 7.49 (10 unidades)
+
+for id, info in produtos.items():
+    print(f'{id} - {info["nome"].capitalize()}: R$ {info["preço"]:.2f} ({info["estoque"]} unidades)')
+
+
+
+
+# for item in produtos.items():
+    # print(f'{item} - {produtos[item]['nome']} R$ {produtos[item]['preço']} ({produtos[item]['estoque']} unidades)')
+    # print(f'{item} - {produtos.values()}')
+
+# for p in produtos.items():
+#     print(f'{p} - ')
+
+# for item in produtos.items():
+#     print(f'{item} - ')
+
+# for p in produtos.items():
+#     for k, v in produtos.items():
+#         print(f'{k} - {v}')
