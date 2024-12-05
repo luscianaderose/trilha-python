@@ -79,6 +79,7 @@ print()
 print('B. ')
 # print(pessoas['Mario']) # não existe, então dá erro
 # dicionario.get(chave)
+print('B. Retorna None')
 print(pessoas.get('Mario')) # retorna None
 print()
 

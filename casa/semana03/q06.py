@@ -28,3 +28,40 @@
 # 3 - Ovos: R$ 0.70 (200 unidades)
 # 4 - Macarrão: R$ 3.50 (50 unidades)
 # 5 - Açúcar: R$ 2.30 (30 unidades)
+
+produtos = {
+    'arroz':{
+        'preço':7.49,
+        'quantidade':10,
+    },
+    'feijão':{
+        'preço':9.69,
+        'quantidade':20,
+    },
+    'ovo':{
+        'preço':0.70,
+        'quantidade':200,
+    },
+    'macarrão':{
+        'preço':3.50,
+        'quantidade':50,
+    },
+    'açúcar':{
+        'preço':2.30,
+        'quantidade':30
+    }
+}
+
+def exibir_estoque():
+    print('\nESTOQUE')
+    for indice, (nome, detalhes) in enumerate(produtos.items(), start=1):
+        print(f'{indice} - {nome.capitalize()}: R$ {detalhes["preço"]:.2f} ({detalhes["quantidade"]} unidades)')
+
+exibir_estoque()
+
+remover = int(input('\nDigite o identificador do produto que deseja remover: ')) - 1
+produto_removido = list(produtos.keys())[remover] # PEGANDO O NOME DO PRODUTO RELATIVO AO IDENTIFICADOR
+produtos.pop(produto_removido)
+print(f'Produto {produto_removido.capitalize()} removido do estoque.')
+
+exibir_estoque()
