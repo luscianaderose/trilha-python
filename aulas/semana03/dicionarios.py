@@ -41,8 +41,8 @@ print()
 print('B) OPERAÇÕES DE ESCRITA')
 
 # dicionario[nova_chave] = novo_valor
-pessoas['Mario'] = {'sobrenome':'Figueira','idade':64}
 print('B1. Adiconando Mario')
+pessoas['Mario'] = {'sobrenome':'Figueira','idade':64}
 print(pessoas)
 print()
 
